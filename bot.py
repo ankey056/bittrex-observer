@@ -33,7 +33,7 @@ def filter_market_names(names):
             return s
 
     rs = list(map(handle_regexp, x))
-    
+
     def is_pass (name):
         for r in rs:
             if callable(r):
@@ -97,4 +97,3 @@ if __name__ == "__main__":
 
     for m in markets:
         print("{}: {}".format(m.name, m.q))
-

@@ -13,8 +13,9 @@ class Operation:
         elif "SELL" == s:
             c = Sell_op
         else:
-            raise Exception("'{}' is wrong string for parsing of Operation's type".format(s))
-        
+            m = "'{}' is wrong string for parsing of Operation's type"
+            raise Exception(m.format(s))
+
         return c(parse_timestamp(d["TimeStamp"]))
 
 class Buy_op(Operation):
@@ -22,7 +23,7 @@ class Buy_op(Operation):
 
 class Sell_op(Operation):
     pass
-                         
+
 
 class History:
     def __init__ (self, operations=None):
@@ -36,4 +37,3 @@ class History:
                  reverse=True)
 
         return History(ops)
-
